@@ -13,7 +13,6 @@ class Public extends Component {
 		const {Component, route} = this.props;
 		return (
 			<React.Fragment>
-				<GlobalStyle/>
 				<PublicContainer>
 					<Suspense fallback={<Spinner/>}>
 						<Component route={route}/>

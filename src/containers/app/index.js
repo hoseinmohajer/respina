@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Route } from 'react-router-dom';
+import { GlobalStyle } from "./style";
 import { ConnectedRouter } from "connected-react-router";
 import { Switch } from "react-router";
 import routes from "../../routes";
@@ -10,7 +11,6 @@ import { history } from "../../configureStore";
 
 class Index extends Component {
 	layoutManage(item, key) {
-		console.log(item.layout);
 		switch (item.layout) {
 			case "public":
 				return (
@@ -62,6 +62,7 @@ class Index extends Component {
 	render() {
 		return (
 			<ConnectedRouter history={history}>
+				<GlobalStyle />
 				<Switch>
 					{this.switchRoutes()}
 					<Route component={NotFound}/>
