@@ -13,8 +13,10 @@ stream.once('open', function(fd) {
 		var user = getRandomString(5);
 		var author = getRandomString(6);
 		var book = getRandomString(7);
+		var translator = getRandomString(8);
 		var category = getRandomCategory();
-		data.push({ user, author, book, category });
+		var abstract = '  کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.'
+		data.push({ translator, abstract, user, author, book, category, image: `images/books/book${Math.floor(Math.random() * 4) + 1}.png` });
 	}
 	data = JSON.stringify(data);
 

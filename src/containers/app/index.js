@@ -57,7 +57,6 @@ class Index extends Component {
 		}
 	}
 	switchRoutes() {
-		console.log(this.props.authData);
 		if (sessionStorage.getItem('loggedIn') || (this.props.authData.length !== 0)) {
 			return routes.map((route, key) => {
 				return this.layoutManage(route, key);

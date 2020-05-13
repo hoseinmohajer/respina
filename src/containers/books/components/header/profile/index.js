@@ -5,7 +5,9 @@ export const Profile = (props) => {
 	return (
 		<ProfileContainer>
 			<i className="profile-icon flaticon-user"/>
-			<UserName>hosein mohajer</UserName>
+			<UserName>
+				{JSON.parse(sessionStorage.getItem('userInfo')).email}
+			</UserName>
 		</ProfileContainer>
 	);
 };

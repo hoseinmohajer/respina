@@ -19,3 +19,9 @@ export const Title = styled.div`
 export const Categories = styled.div`
 	padding: 8px 16px;
 `;
+export const Row = styled.div`
+	margin-bottom: 8px;
+	&:last-child {
+		margin-bottom: 0;	
+	}
+`;
