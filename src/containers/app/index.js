@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import { Route } from 'react-router-dom';
 import { GlobalStyle } from "./style";
 import { ConnectedRouter } from "connected-react-router";
@@ -6,8 +7,9 @@ import { Switch } from "react-router";
 import routes from "../../routes";
 import Public from '../../layouts/public';
 import Authorized from '../../layouts/authorized';
-import { NotFound } from "../../components/notFound";
 import { history } from "../../configureStore";
+import { NotFound } from "../../components/notFound";
+import Login from "../auth/login";
 
 class Index extends Component {
 	layoutManage(item, key) {
@@ -55,9 +57,22 @@ class Index extends Component {
 		}
 	}
 	switchRoutes() {
-		return routes.map((route, key) => {
-			return this.layoutManage(route, key);
-		});
+		console.log(this.props.authData);
+		if (sessionStorage.getItem('loggedIn') || (this.props.authData.length !== 0)) {
+			return routes.map((route, key) => {
+				return this.layoutManage(route, key);
+			});
+		} else {
+			return (
+				<Route
+					exact
+					path="/*"
+					render={route => (
+						<Public route={route} Component={Login} />
+					)}
+				/>
+			);
+		}
 	}
 	render() {
 		return (
@@ -72,4 +87,10 @@ class Index extends Component {
 	}
 }
 
-export default Index;
+const mapStateToProps = (store) => {
+	return {
+		authData: store.Auth.data
+	}
+};
+
+export default connect(mapStateToProps)(Index);

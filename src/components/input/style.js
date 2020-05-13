@@ -23,7 +23,10 @@ export const Label = styled.div`
 `;
 export const Input = styled.div`
 	width: 100%;
-	border: 1px solid ${colors.gray_light};
+	border: ${props => (props.error) ?
+		`1px solid ${colors.red}` :
+		`1px solid ${colors.gray_light}`
+	};
 	border-radius: 8px;
 	font-size: 16px;
 	input {
@@ -32,5 +35,21 @@ export const Input = styled.div`
 		border-radius: 8px;
 		border: 0;
 		padding: 8px 12px;
+		direction: ${props => {
+			switch (props.type) {
+				case 'email':
+					return `ltr`;
+				case 'number':
+					return `ltr`;
+				default:
+					return 'rtl';
+			}	
+		}};
 	}
+`;
+export const Error = styled.div`
+	margin-top: 8px;
+	width: 100%;
+	font-size: 12px;
+	color: ${colors.red};
 `;

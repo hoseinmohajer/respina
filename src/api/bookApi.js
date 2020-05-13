@@ -1,5 +1,5 @@
-const baseUrl = process.env.BASE_PATH;
+const data = require('../database/data.json');
 
 export const getBooksList = () => {
-	return [{data: 'some data'}];
+	return data;
 };

@@ -1,5 +1,5 @@
 import React, {Component, Suspense} from 'react';
-import {GlobalStyle, PublicContainer} from './style';
+import {PublicContainer} from './style';
 import { Spinner } from '../../components/spinner';
 
 class Public extends Component {

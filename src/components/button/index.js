@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Loading, Children } from "./style";
-import { Spinner } from "../spinner";
+import { Spinner } from "./components/spinner";
 
 export default props => {
 	const {borderless, loading, ...other} = props;
