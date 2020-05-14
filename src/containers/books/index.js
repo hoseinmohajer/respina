@@ -46,7 +46,6 @@ const Index = (props) => {
 	const currentPageBooks = books.slice(indexOfFirstPage, indexOfLastPage);
 
 	const paginate = (pageNumber) => setCurrentPage(pageNumber);
-	console.log(currentPage);
 	return (
 		<React.Fragment>
 			<Header/>
