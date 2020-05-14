@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {colors} from "../../../../constants/colors";
+// import {colors} from "../../../../constants/colors";
 
 export const BannerContainer = styled.div`
 	margin-bottom: 128px;

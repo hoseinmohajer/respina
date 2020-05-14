@@ -20,10 +20,16 @@ export const Login = (props) => {
 		setPassErr('');
 	};
 	const submit = () => {
-		if (value && value.email && value.password && value.password.length >= 6) {
+		if (value && value.email && value.password && value.password.length >= 6 && validateEmail(value.email)) {
 			props.login(value);
 		} else {
-			setEmailErr((!value.email) ? 'ایمیل اجباریست!' : '');
+			if (!value.email) {
+				setEmailErr('ایمیل اجباریست!');
+			} else if (!validateEmail(value.email)) {
+				setEmailErr('آدرس ایمیل وارد شده معتبر نمی باشد.');
+			} else {
+				setEmailErr('');
+			}
 			if (!value.password) {
 				setPassErr('رمز عبور اجباریست!');
 			} else if (value.password && value.password.length < 6) {
@@ -63,6 +69,11 @@ export const Login = (props) => {
 				</FormContainer>
 			</LoginContainer>
 		);
+};
+
+const validateEmail = (email) => {
+	const re = /^(([^<>()[\]\\.,;:\s@]+(\.[^<>()[\]\\.,;:\s@]+)*)|(.+))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(email);
 };
 
 const mapStateToProps = (store) => {
