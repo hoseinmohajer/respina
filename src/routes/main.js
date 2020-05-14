@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import { lazy } from "react";
 const Login = lazy(() => import('../containers/auth/login'));
 const Books = lazy(() => import('../containers/books'));
 
