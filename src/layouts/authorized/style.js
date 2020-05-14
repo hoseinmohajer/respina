@@ -16,4 +16,9 @@ export const AuthorizedContainer = styled.div`
 			padding: 16px 8px;
 		}
   }
+	@media only screen and (max-width: 993px) {
+    .inner-container {
+			padding: 16px;
+		}
+  }
 `;

@@ -30,6 +30,9 @@ export const SidebarContainer = styled.div`
 			}
 		}};
   }
+	@media only screen and (max-width: 993px) {
+    width: 250px;
+  }
 `;
 export const Title = styled.div`
 	background-color: ${colors.purple_light};
