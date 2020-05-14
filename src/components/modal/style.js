@@ -28,6 +28,12 @@ export const ModalWrapper = styled.div`
     min-height: 32%;
     border-radius: 8px;
     background-color: ${colors.white};
+    @media only screen and (max-width: 767px) {
+			max-height: 400px;
+			overflow: auto;
+			max-width: calc(100% - 16px);
+			min-width: 300px;
+	  }
     .modal-header {
       height: 60px;
       width: 100%;
@@ -43,6 +49,9 @@ export const ModalWrapper = styled.div`
         align-items: center;
         width: 50px;
         height: 50px;
+        position: absolute;
+        top: 8px;
+        left: 8px;
         &:before {
           margin: 0;
           font-size: 16px;
@@ -92,9 +101,14 @@ export const ModalWrapper = styled.div`
       		 line-height: 1.58;
       		}
       	}
-      	
       }
     }
+    @media only screen and (max-width: 767px) {
+			.modal-body {
+				flex-direction: column;
+				padding: 4px 32px 32px 32px;
+			}
+	  }
     .modal-footer {
       height: 70px;
       width: 100%;

@@ -1,5 +1,5 @@
 import React, {Component, Suspense} from 'react';
-import {PublicContainer} from './style';
+import {PublicContainer, GlobalStyle} from './style';
 import { Spinner } from '../../components/spinner';
 
 class Public extends Component {
@@ -13,6 +13,7 @@ class Public extends Component {
 		const {Component, route} = this.props;
 		return (
 			<React.Fragment>
+				<GlobalStyle/>
 				<PublicContainer>
 					<Suspense fallback={<Spinner/>}>
 						<Component route={route}/>

@@ -22,4 +22,7 @@ export const ProfileContainer = styled.div`
 export const UserName = styled.div`
 	color: ${colors.gray};
 	font-size: 16px;
+	@media only screen and (max-width: 767px) {
+    display: none;
+  }
 `;

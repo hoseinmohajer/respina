@@ -1,8 +1,7 @@
-import styled, {createGlobalStyle} from 'styled-components';
+import styled from 'styled-components';
 import { colors } from '../../../constants/colors';
 
 export const LoginContainer = styled.div`
-	width: 100%;
 	height: 100vh;
 	display: flex;
 	justify-content: center;

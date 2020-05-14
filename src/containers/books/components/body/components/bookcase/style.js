@@ -9,8 +9,16 @@ export const BookcaseContainer = styled.div`
 	justify-content: space-between;
 	align-items: flex-start;
 	flex-wrap: wrap;
+	@media only screen and (max-width: 767px) {
+    width: 100%;
+		max-width: 100%;
+		padding: 0 8px 0 0;
+		justify-content: center;
+		align-items: center;
+  }
 `;
 export const Card = styled.div`
+	cursor: pointer;
 	display: flex;
 	align-items: flex-start;
 	justify-content: flex-start;
@@ -44,4 +52,13 @@ export const Card = styled.div`
 			color: ${colors.gray};
 		}
 	}
+	@media only screen and (max-width: 767px) {
+		width: 100%;
+		max-width: 300px;
+		margin-left: 16px;
+    .card-image {
+		  width: 100%;
+		  height: 400px;
+		}
+  }
 `;
